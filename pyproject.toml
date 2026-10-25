@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "network-core"
+version = "0.1.0"
+description = "Shared network ops: MikroTik RouterOS API, read-only SSH inventory, vendor identity, geo"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Denis Rykov" }]
+dependencies = [
+  "librouteros>=3.2.1",
+  "paramiko>=3.4,<5",
+  "haversine>=2.8.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
